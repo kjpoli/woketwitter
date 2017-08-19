@@ -40,7 +40,7 @@ gulp.task('concat-js-script', function () {
         .pipe(gulp.dest('./js'));
 });
 
-// Transpile ES6 JS into plain javascript, 
+// Transpile ES6 JS into plain javascript,
 // you can still use regular javascript and just switch it out in index.html script src
 gulp.task('transpile-compile-es6', () => {
    return gulp.src('./js/index.js')
@@ -49,7 +49,9 @@ gulp.task('transpile-compile-es6', () => {
        .pipe(rename('index.min.js'))
        .pipe(gulp.dest('./js/es2015'));
 });
-
+gulp.task('fonts', function() {
+    return gulp.src('node_modules/font-awesome/fonts/*').pipe(gulp.dest('public/fonts'));
+});
 
 // If you add a new file to either bootstrap 4 or custom dir,
 // run compile-boostrap OR custom-sass first then this task

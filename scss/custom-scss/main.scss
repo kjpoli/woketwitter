@@ -1,8 +1,139 @@
 
- //Place here your custom scss code
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+$brand-primary: #00aced; 
+$twitter-primary: #00aced;
+$black: #4f4f4f; 
+$twitter-bg: #c0deed;
+$green: #8caf68;
+$red: #ff6051; 
+
+$font-stack: Helvetica, sans-serif;
 
 body {
+    font-family: Helvetica;
+    font-weight: 500;
     padding: 20px 20px
 }
+p {
+    font-family: 'Source Sans Pro';
+    font-size: 14pt;
+}
+h1 {
+    color: $black;
+    font-weight: 700;
+}
+.brand-header {
+    font-weight: 600;
+    text-align: center;
+    font-size: 60pt;
+    font-weight: 900;
+    .fa-check {
+        color: $green;
+    }
+    .fa-remove {
+        color: $red;
+    }
+    
+}
 
-
+.primary {
+    color: $twitter-primary;
+}
+.card {
+    border-radius: 12px;
+    border: 2px $twitter-primary solid;
+    
+    .card-header{
+        background-color: $twitter-primary;
+        border-radius: 12px 12px 0 0;
+    }
+    .card-block p { 
+        color: $black;
+        &.card-main{
+            text-align: center;
+        }
+    }
+    .card-footer {
+        margin: -15px;
+        line-height: 8px;
+        text-align: center;
+        height: 12px;
+        width: auto;
+        border-radius: 0 0 12px 12px;;
+        background-color: $twitter-primary;
+        color: $twitter-bg;
+        border: transparent;
+    }
+    border-radius: 12px;
+    border: 1px $twitter-primary solid;
+    border-bottom: 2px $twitter-primary solid;
+    color: white;
+    hr{
+        background-color: $twitter-primary;
+    }
+    h1{
+        font-size: 40pt;
+        color: white;
+        padding-top: 10px;
+    }
+}
+.btn {
+    font-family: Helvetica;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    &.btn-transparent {
+        background-color: white;
+        color: $twitter-primary;
+        border: 1px $twitter-primary solid;
+        &:hover {
+           background-color: $twitter-primary;
+           color: white;
+        }
+    }
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    border-top: 1px $twitter-primary solid;
+    color: $black;
+}
+.show-tweet{
+    padding: 15px;
+    border: 1px $twitter-bg solid;
+    width: 50%;
+    h1{
+        font-size: 24pt;
+        color: $twitter-primary;
+        
+    }
+}
+i {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.row {
+    display: inline-block;
+    float: right;
+}
+.tool {
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    color: white;
+    &.fa-check {
+        background-color: $green;
+    }
+    &.fa-remove {
+        background-color: $red;
+    }
+    border-radius: 50%;
+}
+blockquote {
+    color: $black;
+}

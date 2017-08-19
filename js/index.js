@@ -6,4 +6,3 @@
 
 // Enable Bootstrap 4 Tooltips
 $('[data-toggle="tooltip"]').tooltip()
-

@@ -20,6 +20,7 @@
     "gulp-uglify": "^2.0.0"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "fs-extra": "^3.0.1"
   }
 }
