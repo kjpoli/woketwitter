@@ -16,38 +16,47 @@
             <i class ="fa fa-check"></i>
             <span class="primary">Audit</span> </a>
     </nav>
-    <div class="card">
-    <div class="card-header">
-        <hr class="primary" />
-        <h1> your pre-woke period </h1>
-        <p> Today, people are more educated and well versed in ethics and intersectionality than ever before.  </p>
-        <p> But it wasn't always this way, and we often shudder looking back through our timelines, whether it be from youthful
-            indescretion, poorly aged humor or simply turning over a new leaf. </p>
-        
-        <hr class="primary" />
-        <hr class="primary" />
-        <hr class="primary" />
-    </div>
-    <div class="card-block card-main"> 
-        <p> Find your pre-woke period, self-reflect, and begin anew </p>
-        <button class ="btn btn-primary btn-transparent"> Sign in with Twitter </button>
-    </div>
-    </div>
-    
-    <div class="card show-tweet">
+    <div class="container-fluid">
         <div class="row">
-            <i class="fa fa-remove tool"></i>
-            <i class="fa fa-check tool"></i>
-        </div>
-        <h1> You Said: </h1>
-        <blockquote class="twitter-tweet" data-lang="en"><p lang="und" dir="ltr">no</p>&mdash; wint (@dril) <a href="https://twitter.com/dril/status/922321981">September 15, 2008</a></blockquote>
-        <div class="card-footer">
-            89 Days Ago
-        </div>
-    </div>
-    <!-- Bundled jQuery, Tether and BS bundled and AFTER is custom js file -->
-    <script src="./js/bootstrap-4-bundle.min.js"></script>
-    <script id="twitter-wjs" type="text/javascript" async defer src="//platform.twitter.com/widgets.js"></script>
-    <script src="./js/es2015/index.min.js"></script>
+            <div class="col col-sm-3">
+                <div class="card">
+                    <div class="card-header">
+                        You
+                    </div>
+                    <div class="card-block card-main display-profile">
+                        <img class="display-avi" src="https://pbs.twimg.com/profile_images/847818629840228354/VXyQHfn0_400x400.jpg"></img>
+                        <div class="display-bio">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="card">
+                    <div class="card-header">
+                        Your Audit
+                    </div>
+                    <div class="card-block card-main">
+                        <div class="card show-tweet">
+                            <div class="span tweet-options">
+                                <i class="fa fa-remove tool float-right"></i>
+                                <i class="fa fa-check tool float-right"></i>
+                            </div>
+                            <h1> You Said: </h1>
+                            <blockquote class="twitter-tweet" data-lang="en"><p lang="und" dir="ltr">no</p>&mdash; wint (@dril) <a href="https://twitter.com/dril/status/922321981">September 15, 2008</a></blockquote>
+                            <div class="card-footer">
+                                89 Days Ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Bundled jQuery, Tether and BS bundled and AFTER is custom js file -->
+            <script src="./js/bootstrap-4-bundle.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"></script>
+            <script src="./js/templates/tweetcard.js"></script> 
+             <script id="twitter-wjs" type="text/javascript" async defer src="//platform.twitter.com/widgets.js"></script>
+            <script src="./js/index.js"></script>
   </body>
 </html>

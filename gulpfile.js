@@ -8,7 +8,8 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
-
+const handlebars = require('gulp-handlebars');
+const defineModule = require('gulp-define-module');
 // Compile Bootstrap 4 Sass Files To CSS Minified Directory
 gulp.task('compile-bs-sass', function(){
     return gulp.src("./scss/boostrap-scss/bootstrap.scss")
@@ -39,7 +40,12 @@ gulp.task('concat-js-script', function () {
         .pipe(concat('bootstrap-4-bundle.min.js'))
         .pipe(gulp.dest('./js'));
 });
-
+gulp.task('compile-templates', function(){
+    return gulp.src(['./templates/*.handlebars'])
+        .pipe(handlebars())
+        .pipe(defineModule('node'))
+        .pipe(gulp.dest('./js/templates/'));
+});
 // Transpile ES6 JS into plain javascript,
 // you can still use regular javascript and just switch it out in index.html script src
 gulp.task('transpile-compile-es6', () => {
@@ -58,7 +64,8 @@ gulp.task('fonts', function() {
 gulp.task('watchFile', ['compile-bs-sass', 'compile-custom-sass'], function() {
     gulp.watch('./scss/boostrap-scss/**.*', ['compile-bs-sass']);
     gulp.watch('./scss/custom-scss/**.*', ['compile-custom-sass']);
-    gulp.watch('./js/index.js', ['transpile-compile-es6']);
+    //gulp.watch('./js/index.js', ['transpile-compile-es6']);
+    gulp.watch('./templates/**.*', ['compile-templates']);
 });
 
 gulp.task('serve', ['watchFile']);

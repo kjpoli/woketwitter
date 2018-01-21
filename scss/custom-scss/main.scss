@@ -15,7 +15,6 @@ $font-stack: Helvetica, sans-serif;
 body {
     font-family: Helvetica;
     font-weight: 500;
-    padding: 20px 20px
 }
 p {
     font-family: 'Source Sans Pro';
@@ -44,32 +43,32 @@ h1 {
 }
 .card {
     border-radius: 12px;
-    border: 2px $twitter-primary solid;
+    border: 0px transparent solid;
     
     .card-header{
         background-color: $twitter-primary;
+        font-weight: 700;
         border-radius: 12px 12px 0 0;
     }
     .card-block p { 
         color: $black;
-        &.card-main{
-            text-align: center;
-        }
+    }
+    .card-main {
+        background-color: $twitter-bg;
     }
     .card-footer {
-        margin: -15px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
         line-height: 8px;
         text-align: center;
-        height: 12px;
-        width: auto;
+        width: 100%;
         border-radius: 0 0 12px 12px;;
         background-color: $twitter-primary;
         color: $twitter-bg;
         border: transparent;
     }
     border-radius: 12px;
-    border: 1px $twitter-primary solid;
-    border-bottom: 2px $twitter-primary solid;
     color: white;
     hr{
         background-color: $twitter-primary;
@@ -102,9 +101,11 @@ h1 {
     color: $black;
 }
 .show-tweet{
-    padding: 15px;
+    max-width: 450px;
+    margin-bottom: 30px;
+    padding: 30px;
+    padding-bottom: 50px;
     border: 1px $twitter-bg solid;
-    width: 50%;
     h1{
         font-size: 24pt;
         color: $twitter-primary;
@@ -112,19 +113,15 @@ h1 {
     }
 }
 i {
-    margin-left: 2px;
-    margin-right: 2px;
-}
-.row {
-    display: inline-block;
-    float: right;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 .tool {
-    font-size: 10px;
-    line-height: 18px;
+    font-size: 15px;
+    line-height: 23px;
     text-align: center;
-    width: 18px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
     color: white;
     &.fa-check {
         background-color: $green;
@@ -136,4 +133,28 @@ i {
 }
 blockquote {
     color: $black;
+}
+.tweet-options {
+    margin-right: -15px;
+    margin-top: -15px;
+}
+
+
+.display-profile {
+    padding: 4px !important;
+    text-align: center;
+}
+.display-avi {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 4px white solid;
+    margin-bottom: -60px;
+    margin-top: 20px;
+}
+
+.display-bio {
+    height: 300px;
+    width: auto;
+    background-color: white;
 }
