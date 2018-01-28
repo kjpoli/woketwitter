@@ -43,7 +43,7 @@ gulp.task('concat-js-script', function () {
 gulp.task('compile-templates', function(){
     return gulp.src(['./templates/*.handlebars'])
         .pipe(handlebars())
-        .pipe(defineModule('node'))
+        .pipe(defineModule('plain'))
         .pipe(gulp.dest('./js/templates/'));
 });
 // Transpile ES6 JS into plain javascript,
@@ -65,7 +65,7 @@ gulp.task('watchFile', ['compile-bs-sass', 'compile-custom-sass'], function() {
     gulp.watch('./scss/boostrap-scss/**.*', ['compile-bs-sass']);
     gulp.watch('./scss/custom-scss/**.*', ['compile-custom-sass']);
     //gulp.watch('./js/index.js', ['transpile-compile-es6']);
-    gulp.watch('./templates/**.*', ['compile-templates']);
+    //gulp.watch('./templates/**.*', ['compile-templates']);
 });
 
 gulp.task('serve', ['watchFile']);

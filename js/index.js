@@ -1,4 +1,3 @@
-
 /*****************************************
  * Place here your custom javascript code
  **************************************/
@@ -66,10 +65,11 @@ class TweetCollection {
         console.log(obj);
         this.tweetarray = obj.problematicTweets;
         console.log(obj.problematicTweets);
-        this.content = document.createElement('div').addClass('tweet-collection');
-        this.tweets.foreach( (tweet) => {
+        this.content = document.createElement('div');
+        $(this.content).addClass('tweet-collection');
+        this.tweetarray.forEach( (tweet) => {
             tweet = new Tweet(tweet);
-            this.content.append(tweet.content);
+            this.content.innerHTML += tweet.content;
         } );
     }
     get tweets() {
@@ -86,12 +86,19 @@ class Tweet {
         this.slurs = obj.slurs;
         this.isHidden = obj.isHidden;
 
-        this.content = Handlebars.templates['tweetcard']({
+        this.content = cardify({
             days: 666,
             body: this.text,
             url: this.url
         });
+
+        obj.badStuff.forEach( (tweet) =>{
+            var badge = document.createElement('span');
+            badge.className = 'badge badge-danger';
+        } );
     }
 }
-
 var audit = new TweetCollection(tweetsjson);
+document.getElementById('card-show-tweets').appendChild(audit.content);
+
+
